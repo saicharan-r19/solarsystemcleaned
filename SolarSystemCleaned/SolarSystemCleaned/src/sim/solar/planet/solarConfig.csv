@@ -1,0 +1,4 @@
+numPlanets,angle,orbit,increment,planetSize,red,green,blue
+90,5,240,1,10,240,240,60
+max in system,offset between planets,distance to center,speed of planet rotation,size of circle,color intensity 0-255,color intensity 0-255,color intensity 0-255
+0,0,0,0,0,-2,-2,2
