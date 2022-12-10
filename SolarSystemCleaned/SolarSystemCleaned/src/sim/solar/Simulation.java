@@ -38,13 +38,13 @@ class Simulation extends JPanel implements Runnable {
  //  private static int screenMid; // mid-screen location 
   private static int screenMid;
    
-   private PlanetLoader planetLoader = new  PlanetLoader();  
+   private final PlanetLoader planetLoader = new  PlanetLoader();  
    private SolarSystem solarSystem  ;
 
    public Simulation() {  
-   System.out.println("before"+screenSize+" "+frameDelay+" "+maxSolarCount+" "+cyclesPerSolarSystem+" "+pauseDelay+" ");
+   
       LoadGraphics();
-System.out.println("After"+screenSize+" "+frameDelay+" "+maxSolarCount+" "+cyclesPerSolarSystem+" "+pauseDelay+" ");
+
 screenMid = screenSize/2;
        List<PlanetInterface> planetList = planetLoader.Produce(solarCounter); 
        solarSystem = new SolarSystem(planetList); 
@@ -108,9 +108,8 @@ public void LoadGraphics() {
  BufferedReader br = new BufferedReader(new FileReader("C:/Users/19sai/OneDrive/Desktop/Fitchburg docs/Assignments/PCP_BMackay/SolarSystemCleaned/SolarSystemCleaned/classes/graphics.txt")); 
  
  while ((line = br.readLine()) != null)   {  
- System.out.println("line"+line);
-               String[] tokens = line.split("\\|"); 
-               System.out.println("tokens"+ tokens[0]);
+                String[] tokens = line.split("\\|"); 
+              
                if (lineCount == 0) {  
                   screenSize         = Integer.parseInt(tokens[0]);         
                   frameDelay         =  Integer.parseInt(tokens[1]);          

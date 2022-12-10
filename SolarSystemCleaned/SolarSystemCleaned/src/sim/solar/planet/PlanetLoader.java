@@ -4,13 +4,12 @@ import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.FileReader;  
-import java.io.IOException;  
 import java.util.HashMap; 
 import com.opencsv.CSVReader; 
 
 public class PlanetLoader {
 
-    private final String planetConfigFile = "solarconfig.csv";
+    private static final String planetConfigFile = "solarconfig.csv";
     
     
     
@@ -18,18 +17,18 @@ public class PlanetLoader {
     
     public List<PlanetInterface> Produce(int row) {
         
-        List<PlanetInterface> planetList = new ArrayList<PlanetInterface>();
+        List<PlanetInterface> planetList = new ArrayList<>();
         Map<Integer,List<Integer>> planetConfigMap = new  HashMap<>();
-        List<Integer> planetConfig = new ArrayList<Integer>(); 
+        List<Integer> planetConfig = new ArrayList<>(); 
         
         
         //TODO: call the ReadPlanetConfig method and have it return a collection of the data it found
         
          planetConfigMap = ReadPlanetConfig(planetConfigFile);
         //TODO: use the 'row' selection to utilize only the selected row from the CSV file
-        System.out.println("row"+row);
+      
         planetConfig = planetConfigMap.get(row);
-        System.out.println("planetConfig"+planetConfig);
+       
         
         //TODO: store the data from solarconfig.csv into these eleven variables:
         //int numplanets = 90; 
