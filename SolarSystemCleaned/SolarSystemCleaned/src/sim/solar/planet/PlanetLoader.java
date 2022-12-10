@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.FileReader;  
-import java.util.HashMap; 
+import java.util.concurrent.*;
 import com.opencsv.CSVReader; 
 
 public class PlanetLoader {
@@ -18,7 +18,7 @@ public class PlanetLoader {
     public List<PlanetInterface> Produce(int row) {
         
         List<PlanetInterface> planetList = new ArrayList<>();
-        Map<Integer,List<Integer>> planetConfigMap = new  HashMap<>();
+        Map<Integer,List<Integer>> planetConfigMap = new  ConcurrentHashMap<>();
         List<Integer> planetConfig = new ArrayList<>(); 
         
         
@@ -83,7 +83,7 @@ public class PlanetLoader {
    private  Map<Integer,List<Integer>>  ReadPlanetConfig(String fileName)  {  
       CSVReader reader = null; 
      
-      Map<Integer,List<Integer>> planetConfigMap = new  HashMap<>(); 
+      Map<Integer,List<Integer>> planetConfigMap = new  ConcurrentHashMap<>(); 
        
 
       try {  

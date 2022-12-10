@@ -36,7 +36,7 @@ class Simulation extends JPanel implements Runnable {
    private int cycleCount = 1;       // must start at one
    private int solarCounter = 0;   // must start at zero
  //  private static int screenMid; // mid-screen location 
-  private static int screenMid;
+  private  int screenMid;
    
    private final PlanetLoader planetLoader = new  PlanetLoader();  
    private SolarSystem solarSystem  ;
@@ -101,7 +101,7 @@ screenMid = screenSize/2;
    }
 
 
-public void LoadGraphics() {
+public static void LoadGraphics() {
  String line;  
  int lineCount=0;
   try {
